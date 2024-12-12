@@ -4,8 +4,10 @@
         <p> <strong>  {{ $job['name'] }} </strong> </p>
         <p class="mb-4">Salary: {{ $job['salary'] }} </p>
         <div class="flex flex-row justify-between mx-4">
+            @can('edit' , $job)
             <x-button href="/jobs/{{$job['id']}}/edit" >Edit Job</x-button>
             <button form="deleteForm" class="p-3 bg-red-500 text-white rounded-md hover:bg-red-700 transition duration-300">Delete</button>
+            @endcan
         </div>
     </div>
 

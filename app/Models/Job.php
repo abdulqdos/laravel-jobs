@@ -15,7 +15,7 @@ class Job extends Model
     protected $guarded = [];
 
 
-    public function employer()
+    public function employer(): BelongsTo
     {
         return $this->belongsTo(Employer::class);
     }
